@@ -17,7 +17,7 @@ class TestcaseController extends Controller
             'author' => $request->author,
             'executor' =>$request->executor,
             'priority' =>$request->priority,
-            'short_description' => $request->desription,
+            'short_description' => $request->description,
             'pre_conditions' =>$request->condition,
             'test_steps' => $request->steps,
             'test_data' => $request->data,

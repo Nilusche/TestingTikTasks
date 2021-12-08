@@ -16,9 +16,9 @@
     @endif
  <form action="/create" method="POST">
  @csrf
-  <h1>Test Case:</h1> <input type='text' name='title'/>
-  <h1>Author:</h1><input type='text'  name='author'/>
-  <h1>Executor:</h1><input type='text'  name='executor'/>
+  <h1>Test Case:</h1> <input type='text' name='title' value="{{old('title')}}"/>
+  <h1>Author:</h1><input type='text'  name='author' value="{{old('author')}}"/>
+  <h1>Executor:</h1><input type='text'  name='executor' value="{{old('executor')}}"/>
   <h1>Priority: </h1>
   <div class="box">
   <select name="priority">
@@ -28,19 +28,19 @@
   </select>
 </div>
   <h2>Short-description</h2>
-  <textarea name="desription"></textarea>
+  <textarea name="description">{{old('description')}}</textarea>
   <h2>Pre-conditions</h2>
-  <textarea name="conditions"></textarea>
+  <textarea name="conditions">{{old('conditions')}}</textarea>
   <h2>Test-steps</h2>
-  <textarea name="steps"></textarea>
+  <textarea name="steps">{{old('steps')}}</textarea>
   <h2>Test-data</h2>
-  <textarea name="data"></textarea>
+  <textarea name="data">{{old('data')}}</textarea>
   <h2>Expected result</h2>
-  <textarea name="expected"></textarea>
+  <textarea name="expected">{{old('expected')}}</textarea>
   <h2>Actual result</h2>
-  <textarea name="actual"></textarea>
+  <textarea name="actual">{{old('actual')}}</textarea>
   <h2>Comments</h2>
-  <textarea name="comment"></textarea>
+  <textarea name="comment">{{old('comment')}}</textarea>
   <button class="button-5" role="button">Save</button>
   </form>
 </div>

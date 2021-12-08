@@ -25,6 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/index', [HomeController::class, 'index']);
 
-Route::get('show', [TestcaseController::class,'show']);
+Route::get('create-test', [TestcaseController::class,'show']);
 Route::post('create',[TestcaseController::class,'create']);
 

@@ -1,7 +1,7 @@
 @extends('layouts.indexlayout')
 
 @section('content')
-  <div class="mt-5">
+  <div style="padding-bottom:10em;margin-top:5em; ">
   <!-- Navigation -->
   <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light mb-5" aria-label="Main navigation">
         <div class="container">
@@ -25,6 +25,9 @@
                 </ul>
                 @if(!Auth::guest())
                 <span class="nav-item">
+                    <a class="btn-solid-sm" href="/create-test">Create Test</a>
+                </span>
+                <span class="nav-item">
                     <a class="btn-solid-sm" href="/logout">Logout</a>
                 </span>
                 @endif
@@ -34,79 +37,29 @@
     <!-- end of navigation -->
 
       
-
+@foreach($tests as $test)
 <div class="blog-card">
     <div class="meta">
       <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
       <ul class="details">
-        <li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Aug. 24, 2015</li>
+        <li class="author"><a href="#">{{$test->author}}</a></li>
+        <li class="date">created: {{$test->created_at}}</li>
         <li class="tags">
           <ul>
-            <li><a href="#">Frontend</a></li>
-            <li><a href="#">Test</a></li>
-            <li><a href="#">Automated</a></li>
+            <li><a href="">{{$test->priority}}</a></li>
           </ul>
         </li>
       </ul>
     </div>
     <div class="description">
-      <h1>Learning to Code</h1>
-      <h2>Opening a door to the future</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <h1>{{$test->title}}</h1>
+      <h2>Last updated: {{$test->updated_at}}</h2>
+      <p>{{$test->short_description}}</p>
       <p class="read-more">
         <a href="#">Read More</a>
       </p>
     </div>
   </div>
-  <div class="blog-card">
-    <div class="meta">
-      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Aug. 24, 2015</li>
-        <li class="tags">
-          <ul>
-            <li><a href="#">Frontend</a></li>
-            <li><a href="#">Test</a></li>
-            <li><a href="#">Automated</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="description">
-      <h1>Learning to Code</h1>
-      <h2>Opening a door to the future</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-      <p class="read-more">
-        <a href="#">Read More</a>
-      </p>
-    </div>
-  </div>
-  <div class="blog-card">
-    <div class="meta">
-      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Aug. 24, 2015</li>
-        <li class="tags">
-          <ul>
-            <li><a href="#">Frontend</a></li>
-            <li><a href="#">Test</a></li>
-            <li><a href="#">Automated</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="description">
-      <h1>Learning to Code</h1>
-      <h2>Opening a door to the future</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-      <p class="read-more">
-        <a href="#">Read More</a>
-      </p>
-    </div>
-  </div>
-  
+@endforeach
   </div>
 @endsection
