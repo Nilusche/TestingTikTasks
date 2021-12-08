@@ -31,10 +31,10 @@
     @endif
  <form action="/update/{{$test->id}}" method="POST">
  @csrf
-  <h1>Test Case:</h1> <input type='text' name='title' value="{{$test->title}}"/>
-  <h1>Author:</h1><input type='text'  name='author' value="{{$test->author}}"/>
+  <h1>Test Case:*</h1> <input type='text' name='title' value="{{$test->title}}"/>
+  <h1>Author:*</h1><input type='text'  name='author' value="{{$test->author}}"/>
   <h1>Executor:</h1><input type='text'  name='executor' value="{{$test->executor}}"/>
-  <h1>Priority: </h1>
+  <h1>Priority:*</h1>
   <div class="box">
   <select name="priority">
     @if($test->priority=="low")
@@ -52,20 +52,21 @@
       @endif
   </select>
 </div>
-  <h2>Short-description</h2>
+  <h2>Short-description*</h2>
   <textarea name="description">{{$test->short_description}}</textarea>
   <h2>Pre-conditions</h2>
   <textarea name="conditions">{{$test->pre_conditions}}</textarea>
-  <h2>Test-steps</h2>
+  <h2>Test-steps*</h2>
   <textarea name="steps">{{$test->test_steps}}</textarea>
-  <h2>Test-data</h2>
+  <h2>Test-data*</h2>
   <textarea name="data">{{$test->test_data}}</textarea>
-  <h2>Expected result</h2>
+  <h2>Expected result*</h2>
   <textarea name="expected">{{$test->expected_result}}</textarea>
-  <h2>Actual result</h2>
+  <h2>Actual result*</h2>
   <textarea name="actual">{{$test->actual_result}}</textarea>
   <h2>Comments</h2>
   <textarea name="comment">{{$test->comments}}</textarea>
+  <h4>All fields marked with * are non-optional</h4>
   <button class="button-5" role="button">Save</button>
   </form>
 </div>
