@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\File;
 class Testcase extends Model
 {
     use HasFactory;
@@ -22,4 +22,8 @@ class Testcase extends Model
         'comments',
         'pre_conditions'
     ];
+
+    public function files(){
+        return $this->hasMany(File::class);
+    }
 }

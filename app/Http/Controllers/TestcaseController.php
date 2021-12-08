@@ -5,6 +5,8 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use App\Http\Requests\CaseRequest;
 use App\Models\Testcase;
+use App\Models\File;
+use Storage;
 class TestcaseController extends Controller
 {
     public function show(){
@@ -60,7 +62,15 @@ class TestcaseController extends Controller
 
     public function destroy($testid){
         $test = Testcase::find($testid);
+
+        $files = File::where('testcases_id', $test->id)->get();
+        foreach($files as $file){
+            $filepath = "app/public/uploads/". $file->name;
+            unlink(storage_path($filepath));
+        }
+
         $test->delete();
+
         return redirect('/index');
     }
 
