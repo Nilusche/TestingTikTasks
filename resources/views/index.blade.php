@@ -33,6 +33,10 @@
                             <li><a class="dropdown-item" href="/status_asc">Sort by status (finished first)</a></li>
                             <li><div class="dropdown-divider"></div></li>
                             <li><a class="dropdown-item" href="/status_desc">Sort by status (unfinished first)</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="/prio_asc">Sort by priority ascending</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="/prio_desc">Sort by priority descending</a></li>
                     </ul>
                     @endif
                 </li>

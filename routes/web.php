@@ -36,4 +36,5 @@ Route::get('date_asc', function(){return view('index')->with('tests', Testcase::
 Route::get('date_desc', function(){return view('index')->with('tests', Testcase::orderBy('created_at', 'desc')->get());});
 Route::get('status_asc', function(){return view('index')->with('tests', Testcase::orderBy('done', 'desc')->get());});
 Route::get('status_desc', function(){return view('index')->with('tests', Testcase::orderBy('done', 'asc')->get());});
-
+Route::get('prio_asc', function(){return view('index')->with('tests', Testcase::orderByRaw("FIELD(priority, \"low\", \"medium\", \"high\")")->get());});
+Route::get('prio_desc', function(){return view('index')->with('tests', Testcase::orderByRaw("FIELD(priority, \"high\", \"medium\", \"low\")")->get());});
