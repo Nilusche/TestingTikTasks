@@ -30,4 +30,6 @@ Route::post('create',[TestcaseController::class,'create']);
 Route::get('edit/{testcase}', [TestcaseController::class, 'edit']);
 Route::post('update/{testcase}',[TestcaseController::class, 'update']);
 Route::get('download/{testcase}',[TestcaseController::class, 'download']);
+Route::get('delete/{testcase}',[TestcaseController::class, 'destroy']);
+Route::get('finish/{testcase}',[TestcaseController::class, 'finish']);
 

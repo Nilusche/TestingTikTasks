@@ -11,7 +11,8 @@
       <div class="menu__container">
         <span class="menu__title">Main menu</span>
         <ul class="menu__list">
-          <li class="menu__item"><a href="">Delete Testcase</a></li>
+          <li class="menu__item"><a href="/delete/{{$test->id}}">Delete Testcase</a></li>
+          <li class="menu__item"><a href="/finish/{{$test->id}}">Mark as tested and finished</a></li>
           <li class="menu__item"><a href="https://www.softwaretestinghelp.com/test-case-template-examples/">Information about Testing</a></li>
           <li class="menu__item"><a href="/download/{{$test->id}}">Download Testcase PDF</a></li>
         </ul>

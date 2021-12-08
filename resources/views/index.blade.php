@@ -7,7 +7,7 @@
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="#">Tik Tasks</a> 
+            <a class="navbar-brand logo-image" href="/index">Tik Tasks</a> 
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text" href="index.html">Zinc</a> -->
@@ -54,7 +54,11 @@
     <div class="description">
       <h1>{{$test->title}}</h1>
       <h2>Last updated: {{$test->updated_at}}</h2>
+      @if($test->done==1)
+      <p class="done">{{$test->short_description}}</p>
+      @else
       <p>{{$test->short_description}}</p>
+      @endif
       <p class="read-more">
         <a href="/edit/{{$test->id}}">Read More</a>
       </p>

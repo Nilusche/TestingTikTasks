@@ -36,7 +36,18 @@ class TestcaseController extends Controller
 
     public function update($testid,CaseRequest $request ){
         $test = Testcase::find($testid);
-        $test->update($request->all());
+        $test->title = $request->title;
+        $test->author = $request->author;
+        $test->executor =$request->executor;
+        $test->priority =$request->priority;
+        $test->short_description = $request->description;
+        $test->pre_conditions =$request->condition;
+        $test->test_steps = $request->steps;
+        $test->test_data =$request->data;
+        $test->expected_result =$request->expected;
+        $test->actual_result =$request->actual;
+        $test->comments = $request->comment;
+        $test->save();
         return redirect('/index');
     }
 
@@ -45,5 +56,18 @@ class TestcaseController extends Controller
         $data = Testcase::where('id', $testid)->get();
         $pdf = PDF::loadView('invoice',compact('data'));
         return $pdf->download('Testcase_'. $testid.'_'.$test->title.'.pdf');
+    }
+
+    public function destroy($testid){
+        $test = Testcase::find($testid);
+        $test->delete();
+        return redirect('/index');
+    }
+
+    public function finish($testid){
+        $test = Testcase::find($testid);
+        $test->done = true;
+        $test->save();
+        return redirect('/index');
     }
 }
