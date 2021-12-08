@@ -30,7 +30,6 @@ class CaseRequest extends FormRequest
             'steps' =>'required',
             'expected' =>'required',
             'actual' =>'required',
-            'comment' =>'required',
             'data' =>'required'
         ];
     }

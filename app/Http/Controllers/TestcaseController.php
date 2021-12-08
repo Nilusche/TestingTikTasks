@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use App\Http\Requests\CaseRequest;
 use App\Models\Testcase;
@@ -27,5 +27,23 @@ class TestcaseController extends Controller
         ]);
 
         return redirect('/index');
+    }
+
+    public function edit( $testid){
+        $test = Testcase::find($testid);
+        return view('edit')->with('test', $test);
+    }
+
+    public function update($testid,CaseRequest $request ){
+        $test = Testcase::find($testid);
+        $test->update($request->all());
+        return redirect('/index');
+    }
+
+    public function download($testid){
+        $test = Testcase::find($testid);
+        $data = Testcase::where('id', $testid)->get();
+        $pdf = PDF::loadView('invoice',compact('data'));
+        return $pdf->download('Testcase_'. $testid.'_'.$test->title.'.pdf');
     }
 }

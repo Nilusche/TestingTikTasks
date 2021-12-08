@@ -56,7 +56,7 @@
       <h2>Last updated: {{$test->updated_at}}</h2>
       <p>{{$test->short_description}}</p>
       <p class="read-more">
-        <a href="#">Read More</a>
+        <a href="/edit/{{$test->id}}">Read More</a>
       </p>
     </div>
   </div>

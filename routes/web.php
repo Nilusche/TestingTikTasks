@@ -21,10 +21,13 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/index', [HomeController::class, 'index']);
+Route::get('index', [HomeController::class, 'index']);
 
 Route::get('create-test', [TestcaseController::class,'show']);
 Route::post('create',[TestcaseController::class,'create']);
+Route::get('edit/{testcase}', [TestcaseController::class, 'edit']);
+Route::post('update/{testcase}',[TestcaseController::class, 'update']);
+Route::get('download/{testcase}',[TestcaseController::class, 'download']);
 
