@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestcaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,8 @@ Auth::routes(['register' => false]);
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/index', function(){
-    return view('index');
-});
+Route::get('/index', [HomeController::class, 'index']);
+
+Route::get('show', [TestcaseController::class,'show']);
+Route::post('create',[TestcaseController::class,'create']);
+
