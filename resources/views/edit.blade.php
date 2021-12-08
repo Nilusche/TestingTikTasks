@@ -1,6 +1,7 @@
 @extends('layouts.crud')
 
 @section('content')
+<a class="button-5" role="button" href="/index">Back</a>
 <div class="container">
 <button class="menu__btn">
     <span class="menu__label">CLICK HERE TO SEE THE MENU</span>
@@ -12,7 +13,7 @@
         <ul class="menu__list">
           <li class="menu__item"><a href="">Delete Testcase</a></li>
           <li class="menu__item"><a href="https://www.softwaretestinghelp.com/test-case-template-examples/">Information about Testing</a></li>
-          <li class="menu__item"><a href="/download/{{$test->id}}">Download Testcase</a></li>
+          <li class="menu__item"><a href="/download/{{$test->id}}">Download Testcase PDF</a></li>
         </ul>
       </div>
     </div>
