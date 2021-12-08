@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestcaseController;
-
+use App\Models\Testcase;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,4 +32,8 @@ Route::post('update/{testcase}',[TestcaseController::class, 'update']);
 Route::get('download/{testcase}',[TestcaseController::class, 'download']);
 Route::get('delete/{testcase}',[TestcaseController::class, 'destroy']);
 Route::get('finish/{testcase}',[TestcaseController::class, 'finish']);
+Route::get('date_asc', function(){return view('index')->with('tests', Testcase::orderBy('created_at', 'asc')->get());});
+Route::get('date_desc', function(){return view('index')->with('tests', Testcase::orderBy('created_at', 'desc')->get());});
+Route::get('status_asc', function(){return view('index')->with('tests', Testcase::orderBy('done', 'desc')->get());});
+Route::get('status_desc', function(){return view('index')->with('tests', Testcase::orderBy('done', 'asc')->get());});
 

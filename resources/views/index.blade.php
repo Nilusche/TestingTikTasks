@@ -22,8 +22,23 @@
                         
                         
                     </li>
+                    @if(!Auth::guest())
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Sort</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="/date_asc">Sort by date ascending</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="/date_desc">Sort by date descending</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="/status_asc">Sort by status (finished first)</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="/status_desc">Sort by status (unfinished first)</a></li>
+                    </ul>
+                    @endif
+                </li>
                 </ul>
                 @if(!Auth::guest())
+                
                 <span class="nav-item">
                     <a class="btn-solid-sm" href="/create-test">Create Test</a>
                 </span>
