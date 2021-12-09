@@ -63,7 +63,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h4>This Website has been created to document Softwaretests on the softwareproject "Tik Tasks"</h4>
+                    <h4>This Website has been created to document softwaretests on the softwareproject "Tik Tasks"</h4>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
