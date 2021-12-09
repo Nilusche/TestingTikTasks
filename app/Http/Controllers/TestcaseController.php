@@ -21,7 +21,7 @@ class TestcaseController extends Controller
             'executor' =>$request->executor,
             'priority' =>$request->priority,
             'short_description' => $request->description,
-            'pre_conditions' =>$request->condition,
+            'pre_conditions' =>$request->conditions,
             'test_steps' => $request->steps,
             'test_data' => $request->data,
             'expected_result' =>$request->expected,
