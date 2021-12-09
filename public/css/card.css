@@ -150,15 +150,6 @@ body {
   top: -0.75rem;
   border-radius: 3px;
 }
-.blog-card .done:first-of-type:before{
-  content: "";
-  position: absolute;
-  height: 5px;
-  background: #9AE66E;
-  width: 35px;
-  top: -0.75rem;
-  border-radius: 3px;
-}
 .blog-card:hover .details {
   left: 0%;
 }

@@ -278,3 +278,20 @@ input[type=submit]:focus {
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
   }
+
+
+.img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+.imgitem {
+    width: 40%;
+    height: 50%;
+    height: auto;
+    margin: auto;
+    
+    padding: 3px;
+    padding-bottom:5em;
+}

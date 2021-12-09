@@ -59,7 +59,7 @@
 @foreach($tests as $test)
 <div class="blog-card">
     <div class="meta">
-      <div class="photo" style="background-image: url(images/prog.svg")></div>
+      <div class="photo" style="background-image: url(images/prog.svg)"></div>
       <ul class="details">
         <li class="author"><a href="#">{{$test->author}}</a></li>
         <li class="date">created: {{$test->created_at}}</li>

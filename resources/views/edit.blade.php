@@ -74,37 +74,23 @@
 
 
 </div>
+<h2 style="text-align:center;"> Upload optional screenshots</h1>
+<form action="/upload-file/{{$test->id}}" method="post" enctype="multipart/form-data">
+  @csrf
+<div class="wrapper">
+  <div class="file-upload">
+    <input type="file" name="files[]" multiple />
+    <i class="fas fa-upload"></i>
+  </div>
+  
+</div>
+<div style="text-align:center;margin-bottom:10em; margin-top:1em;"><button class="button-5" role="button">Upload</button></div>
+</form>
 
 
-<div class="container mt-5">
-        <form action="/upload-file/{{$test->id}}" method="post" enctype="multipart/form-data">
-          <h3 class="text-center mb-5">Upload File in Laravel</h3>
-            @csrf
-            @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <strong>{{ $message }}</strong>
-            </div>
-          @endif
-
-          @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-          @endif
-
-            <div class="custom-file">
-                <input type="file" name="files[]" class="custom-file-input" id="chooseFile" multiple>
-                <label class="custom-file-label" for="chooseFile">Select file</label>
-            </div>
-
-            <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
-                Upload Files
-            </button>
-        </form>
-    </div>
-
+@foreach($files as $file)
+<div class="imgitem">
+  <img class="img"src="{{ asset('uploads/uploads/'.$file->name) }}" alt="png">
+</div>
+@endforeach
 @endsection

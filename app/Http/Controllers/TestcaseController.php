@@ -7,6 +7,7 @@ use App\Http\Requests\CaseRequest;
 use App\Models\Testcase;
 use App\Models\File;
 use Storage;
+
 class TestcaseController extends Controller
 {
     public function show(){
@@ -33,7 +34,9 @@ class TestcaseController extends Controller
 
     public function edit( $testid){
         $test = Testcase::find($testid);
-        return view('edit')->with('test', $test);
+        $files = File::where('testcases_id', $testid)->get();
+
+        return view('edit')->with('test', $test)->with('files', $files);
     }
 
     public function update($testid,CaseRequest $request ){
@@ -65,8 +68,7 @@ class TestcaseController extends Controller
 
         $files = File::where('testcases_id', $test->id)->get();
         foreach($files as $file){
-            $filepath = "app/public/uploads/". $file->name;
-            unlink(storage_path($filepath));
+            unlink('uploads/uploads/'. $file->name);
         }
 
         $test->delete();
@@ -80,4 +82,5 @@ class TestcaseController extends Controller
         $test->save();
         return redirect('/index');
     }
+
 }
