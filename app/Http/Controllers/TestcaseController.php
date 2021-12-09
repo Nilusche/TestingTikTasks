@@ -46,7 +46,7 @@ class TestcaseController extends Controller
         $test->executor =$request->executor;
         $test->priority =$request->priority;
         $test->short_description = $request->description;
-        $test->pre_conditions =$request->condition;
+        $test->pre_conditions =$request->conditions;
         $test->test_steps = $request->steps;
         $test->test_data =$request->data;
         $test->expected_result =$request->expected;
