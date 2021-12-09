@@ -63,7 +63,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h4>This Website has been created to document softwaretests on the softwareproject "Tik Tasks"</h4>
+                    <h4>This website has been created to document softwaretests on the softwareproject "Tik Tasks"</h4>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -74,7 +74,7 @@
     <!-- Copyright -->
     <div class="copyright bg-gray">
         <div class="container">
-        <p class="p-small statement text-center">Tik Tasks 2021: This Website is created for educations purposes only</a></p>
+        <p class="p-small statement text-center">Tik Tasks 2021: This website is created for educations purposes only</a></p>
         </div> <!-- end of container -->
     </div> <!-- end of copyright --> 
     <!-- end of copyright -->
