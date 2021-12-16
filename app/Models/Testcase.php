@@ -20,7 +20,8 @@ class Testcase extends Model
         'expected_result',
         'actual_result',
         'comments',
-        'pre_conditions'
+        'pre_conditions',
+        'reference'
     ];
 
     public function files(){

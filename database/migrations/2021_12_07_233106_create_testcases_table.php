@@ -27,6 +27,7 @@ class CreateTestcasesTable extends Migration
             $table->text('actual_result');
             $table->text('comments')->nullable();
             $table->boolean('done')->default(false);
+            $table->integer('reference');
             $table->timestamps();
         });
     }

@@ -33,6 +33,7 @@
  <form action="/update/{{$test->id}}" method="POST">
  @csrf
   <h1>Test Case:*</h1> <input type='text' name='title' value="{{$test->title}}"/>
+  <h1>Use Case Referencenumber*:  A_...</h1><input type='text'  name='reference' value="{{sprintf("%03d", $test->reference)}}"/>
   <h1>Author:*</h1><input type='text'  name='author' value="{{$test->author}}"/>
   <h1>Executor:</h1><input type='text'  name='executor' value="{{$test->executor}}"/>
   <h1>Priority:*</h1>

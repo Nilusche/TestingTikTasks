@@ -27,6 +27,7 @@ class TestcaseController extends Controller
             'expected_result' =>$request->expected,
             'actual_result' =>$request->actual,
             'comments' => $request->comment,
+            'reference'=>$request->reference,
         ]);
 
         return redirect('/index');
@@ -52,6 +53,7 @@ class TestcaseController extends Controller
         $test->expected_result =$request->expected;
         $test->actual_result =$request->actual;
         $test->comments = $request->comment;
+        $test->reference= $request->reference;
         $test->save();
         return redirect('/index');
     }

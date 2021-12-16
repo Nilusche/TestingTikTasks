@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestcaseController;
+use App\Http\Controllers\ExportExcelController;
 use App\Http\Controllers\FileUploadController;
 use App\Models\Testcase;
 /*
@@ -42,3 +43,5 @@ Route::get('prio_desc', function(){return view('index')->with('tests', Testcase:
 
 
 Route::post('/upload-file/{testcase}', [FileUploadController::class, 'fileUpload']);
+
+Route::get('/export_excel', [ExportExcelController::class, 'export'])->name('export_excel.excel');

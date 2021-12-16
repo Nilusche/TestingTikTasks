@@ -37,12 +37,14 @@
                             <li><a class="dropdown-item" href="/prio_asc">Sort by priority ascending</a></li>
                             <li><div class="dropdown-divider"></div></li>
                             <li><a class="dropdown-item" href="/prio_desc">Sort by priority descending</a></li>
-                    </ul>
+                      </ul>
                     @endif
                 </li>
                 </ul>
                 @if(!Auth::guest())
-                
+                <span class="nav-item">
+                    <a class="btn-solid-sm" href="/export_excel">Export Matrix</a>
+                </span>
                 <span class="nav-item">
                     <a class="btn-solid-sm" href="/create-test">Create Test</a>
                 </span>
