@@ -59,7 +59,8 @@ class TestcaseController extends Controller
     public function download($testid){
         $test = Testcase::find($testid);
         $data = Testcase::where('id', $testid)->get();
-        $pdf = PDF::loadView('invoice',compact('data'));
+        $files = File::where('testcases_id', $testid)->get();
+        $pdf = PDF::loadView('invoice',compact('data', 'files'));
         return $pdf->download('Testcase_'. $testid.'_'.$test->title.'.pdf');
     }
 

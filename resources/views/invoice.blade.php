@@ -293,6 +293,21 @@
         box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
         transform: translateY(0);
     }
+        .img {
+    max-width: 100%;
+    height: auto;
+    
+    }
+
+    .imgitem {
+        width: 90%;
+        height: auto;
+        margin: auto;
+        
+        padding: 3px;
+        padding-bottom:5em;
+    }
+
     </style>
 </head>
 <body>
@@ -352,8 +367,13 @@
   </form>
 </div>
 
-
+@foreach($files as $file)
+<div class="imgitem">
+  <img class="img"src="{{ public_path('uploads/uploads/'.$file->name) }}" alt="png">
 </div>
 @endforeach
+</div>
+@endforeach
+
 </body>
 </html>
