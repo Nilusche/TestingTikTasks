@@ -26,7 +26,7 @@ class CaseRequest extends FormRequest
         return [
             'title' =>'required',
             'author' =>'required',
-            'description' =>'required|max:100',
+            'description' =>'required|max:500',
             'steps' =>'required',
             'expected' =>'required',
             'actual' =>'required',
