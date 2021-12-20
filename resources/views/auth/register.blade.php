@@ -11,7 +11,7 @@
             <div class="col-md-8">
               <div class="mb-4">
               <h3>Register</h3>
-              <p class="mb-4">Register to access the Testingpanel</p>
+              <p class="mb-4">Register to access the Testingpanel (use new email and not a private mail</p>
             </div>
             <form action="{{ route('register') }}" method="post">
                 @csrf
