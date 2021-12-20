@@ -21,7 +21,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Auth::routes(['register' => false]);
+Auth::routes();
+Route::get('reg', function(){return view('auth.register2');});
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

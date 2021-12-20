@@ -44,6 +44,7 @@
                         <h1 class="h1-large">Tik Tasks Softwaretesting</h1>
                         <p class="p-large">Proceed to show current tests</p>
                         <a class="btn-solid-lg" href="/login">Login as Tester</a>
+                        <a class="btn-solid-lg" href="/register">Register</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6 col-xl-7">
