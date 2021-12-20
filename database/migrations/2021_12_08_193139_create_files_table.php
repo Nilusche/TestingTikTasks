@@ -15,11 +15,13 @@ class CreateFilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('testcase_id');
+            $table->text('slug');
+            $table->string('name');
+            $table->string('type');
+            $table->string('size');
             $table->timestamps();
-            $table->string('name')->nullable();
-            $table->string('file_path')->nullable();
-            $table->unsignedBigInteger('testcases_id');
-            $table->foreign('testcases_id')->references('id')->on('testcases')->onDelete('cascade');
+            $table->foreign('testcase_id')->references('id')->on('testcases')->onDelete('cascade');
         });
     }
 

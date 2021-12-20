@@ -9,23 +9,43 @@ use Storage;
 class FileUploadController extends Controller
 {
 
-    public function fileUpload($testid,Request $req){
+    public function fileUpload($testid,Request $request){
         
-        if($req->hasfile('files')) {
-            foreach($req->file('files') as $file){
-                $fileName = time().'_'.$file->getClientOriginalName();
-                $filePath = $file->storeAs('uploads', $fileName, 'public_uploads');
-    
-                $fileModel = new File;
-                $fileModel->testcases_id = $testid;
-                $fileModel->name = time().'_'.$file->getClientOriginalName();
-                $fileModel->file_path = '/storage/' . $filePath;
-                $fileModel->save();    
-                
+        if($request->hasfile('files'))
+         {
+            foreach($request->file('files') as $file)
+            {
+                $fileName = $testid. '_' .time() .$file->getClientOriginalName(). '.' . $file->extension();
+
+                $clientname = $file->getClientOriginalName();
+                $type = $file->extension();
+                $size = $file->getSize();
+        
+                $file->move(public_path('file'), $fileName);
+                File::create([
+                    'testcase_id' => $testid,
+                    'slug' => $clientname,
+                    'name' => $fileName,
+                    'type' => $type,
+                    'size' => $size
+                ]);
             }
-           
-            
-        }
-        return redirect('/index');
+         }
+        
+        return redirect()->back();
+    }
+
+    public function open($fileName){
+        return response()->file('file/'. $fileName);
+    }
+
+    
+    public function destroy(File $file)
+    {
+        $path = 'file/'. $file->name;
+        $file->delete();
+        unlink(public_path($path));
+
+        return redirect()->back();
     }
 }

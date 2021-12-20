@@ -1,6 +1,11 @@
 @extends('layouts.crud')
-
+@section('css')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+@endsection
 @section('content')
+<div class="without-bootstrap">
+
+
 <a class="button-5" role="button" href="/index">Back</a>
 <div class="container">
 <button class="menu__btn">
@@ -87,11 +92,34 @@
 </div>
 <div style="text-align:center;margin-bottom:10em; margin-top:1em;"><button class="button-5" role="button">Upload</button></div>
 </form>
-
-
-@foreach($files as $file)
-<div class="imgitem">
-  <img class="img"src="{{ asset('uploads/uploads/'.$file->name) }}" alt="png">
 </div>
-@endforeach
+
+
+<div class="container">
+  <div class="bg-light p-5 rounded">
+      <h1>Dateien</h1>
+      <table class="table table-striped mt-3">
+      <thead>
+          <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Typ</th>
+          <th scope="col">Ansicht</th>
+          <th scope="col">Löschen</th>
+          </tr>
+      </thead>
+      <tbody>
+          @foreach($files as $file)
+          <tr>
+              <td width="3%">{{ $file->id }}</td>
+              <td>{{ $file->slug }}</td>
+              <td width="10%">{{ $file->type }}</td>
+              <td width="5%"><a href="/files/{{$file->name}}" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Anzeigen</a></td>
+              <td width="5%"><a href="/files/delete/{{$file->id}}" class="btn btn-outline-danger">Löschen</a></td>
+          </tr>
+          @endforeach
+      </tbody>
+      </table>
+  </div>
+</div>
 @endsection

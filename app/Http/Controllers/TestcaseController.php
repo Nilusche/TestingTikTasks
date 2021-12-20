@@ -35,7 +35,7 @@ class TestcaseController extends Controller
 
     public function edit( $testid){
         $test = Testcase::find($testid);
-        $files = File::where('testcases_id', $testid)->get();
+        $files = File::where('testcase_id', $testid)->get();
 
         return view('edit')->with('test', $test)->with('files', $files);
     }
@@ -61,7 +61,7 @@ class TestcaseController extends Controller
     public function download($testid){
         $test = Testcase::find($testid);
         $data = Testcase::where('id', $testid)->get();
-        $files = File::where('testcases_id', $testid)->get();
+        $files = File::where('testcase_id', $testid)->get();
         $pdf = PDF::loadView('invoice',compact('data', 'files'));
         return $pdf->download('Testcase_'. $testid.'_'.$test->title.'.pdf');
     }
@@ -69,9 +69,11 @@ class TestcaseController extends Controller
     public function destroy($testid){
         $test = Testcase::find($testid);
 
-        $files = File::where('testcases_id', $test->id)->get();
+        $files = File::where('testcase_id',$testid)->get();
         foreach($files as $file){
-            unlink('uploads/uploads/'. $file->name);
+            $path = 'file/'. $file->name;
+            $file->delete();
+            unlink(public_path($path));
         }
 
         $test->delete();

@@ -45,3 +45,6 @@ Route::get('prio_desc', function(){return view('index')->with('tests', Testcase:
 Route::post('/upload-file/{testcase}', [FileUploadController::class, 'fileUpload']);
 
 Route::get('/export_excel', [ExportExcelController::class, 'export'])->name('export_excel.excel');
+
+Route::get('files/{filename}', [FileUploadController::class, 'open'])->middleware('auth');
+Route::get('files/delete/{file}', [FileUploadController::class, 'destroy'])->middleware('auth');

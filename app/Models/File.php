@@ -9,9 +9,13 @@ class File extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $table = 'files';
+    protected $fillable =[
+        'testcase_id',
         'name',
-        'file_path'
+        'type',
+        'size',
+        'slug'
     ];
 
     public function testcase(){

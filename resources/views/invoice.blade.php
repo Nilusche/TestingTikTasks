@@ -370,7 +370,9 @@
 
 @foreach($files as $file)
 <div class="imgitem">
-  <img class="img"src="{{ public_path('uploads/uploads/'.$file->name) }}" alt="png">
+    @if($file->type=="png"||$file->type=="jpeg")
+        <img class="img"src="{{ public_path('file/'.$file->name) }}" alt="png">
+    @endif
 </div>
 @endforeach
 </div>
