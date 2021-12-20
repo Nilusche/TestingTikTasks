@@ -16,10 +16,10 @@
       <div class="menu__container">
         <span class="menu__title">Main menu</span>
         <ul class="menu__list">
-          <li class="menu__item"><a style="text-decoration:none" href="/delete/{{$test->id}}">Delete Testcase</a></li>
-          <li class="menu__item"><a style="text-decoration:none" href="/finish/{{$test->id}}">Mark as tested and finished</a></li>
-          <li class="menu__item"><a style="text-decoration:none" href="https://www.softwaretestinghelp.com/test-case-template-examples/">Information about Testing</a></li>
-          <li class="menu__item"><a style="text-decoration:none" href="/download/{{$test->id}}">Download Testcase PDF</a></li>
+          <li class="menu__item"><a style="text-decoration:none; color:white" href="/delete/{{$test->id}}">Delete Testcase</a></li>
+          <li class="menu__item"><a style="text-decoration:none; color:white" href="/finish/{{$test->id}}">Mark as tested and finished</a></li>
+          <li class="menu__item"><a style="text-decoration:none; color:white" href="https://www.softwaretestinghelp.com/test-case-template-examples/">Information about Testing</a></li>
+          <li class="menu__item"><a style="text-decoration:none; color:white" href="/download/{{$test->id}}">Download Testcase PDF</a></li>
         </ul>
       </div>
     </div>
