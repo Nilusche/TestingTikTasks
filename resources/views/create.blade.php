@@ -16,7 +16,7 @@
  <form action="/create" method="POST">
  @csrf
   <h1>Test Case:*</h1> <input type='text' name='title' value="{{old('title')}}"/>
-  <h1>Use Case Referencenumber*: A_...</h1><input type='text'  name='reference' value="{{sprintf("%03d", old('reference'))}}"/>
+  <h1>Use Case Referencenumber*: U_...</h1><input type='text'  name='reference' value="{{sprintf("%03d", old('reference'))}}"/>
   <h1>Author:*</h1><input type='text'  name='author' value="{{old('author')}}"/>
   <h1>Executor:</h1><input type='text'  name='executor' value="{{old('executor')}}"/>
   <h1>Priority:* </h1>
