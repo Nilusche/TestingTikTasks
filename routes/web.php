@@ -46,5 +46,5 @@ Route::post('/upload-file/{testcase}', [FileUploadController::class, 'fileUpload
 
 Route::get('/export_excel', [ExportExcelController::class, 'export'])->name('export_excel.excel');
 
-Route::get('files/{filename}', [FileUploadController::class, 'open'])->middleware('auth');
-Route::get('files/delete/{file}', [FileUploadController::class, 'destroy'])->middleware('auth');
+Route::get('files/{filename}', [FileUploadController::class, 'open']);
+Route::get('files/delete/{file}', [FileUploadController::class, 'destroy']);
