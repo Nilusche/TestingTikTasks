@@ -11,6 +11,7 @@
     <tr>
         
         <th><b>Use Case Reference</b></th>
+        <td><b>Test Case Title</b></td>
         <th><b>Test Case Description</b> </th>
         <th><b>Test Steps</b></th>
         <th><b>Test Data</b></th>
@@ -25,6 +26,7 @@
     @foreach($testcases as $testcase)
         <tr>
             <td>A{{sprintf("%03d", $testcase->reference)}}</td>
+            <td>{{ $testcase->title}}</td>
             <td>{{ $testcase->short_description }}</td>
             <td>{{ $testcase->test_steps }}</td>
             <td>{{ $testcase->test_data }}</td>
