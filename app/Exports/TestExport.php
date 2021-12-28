@@ -17,7 +17,7 @@ class TestExport implements FromView, ShouldAutoSize, WithEvents
     public function view(): View
     {
         return view('excel', [
-            'testcases' => Testcase::all()
+            'testcases' => Testcase::orderBy('reference','asc')->get()
         ]);
     }
 
