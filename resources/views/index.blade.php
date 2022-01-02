@@ -40,7 +40,7 @@
                             <li><div class="dropdown-divider"></div></li>
                             <li><a class="dropdown-item" href="/title_asc">Sort by Title ascending</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="/title_desc">Sort by Title ascending</a></li>
+                            <li><a class="dropdown-item" href="/title_desc">Sort by Title descending</a></li>
                       </ul>
                     @endif
                 </li>
