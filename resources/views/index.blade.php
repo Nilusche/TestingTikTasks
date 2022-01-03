@@ -38,9 +38,9 @@
                             <li><div class="dropdown-divider"></div></li>
                             <li><a class="dropdown-item" href="/prio_desc">Sort by priority descending</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="/title_asc">Sort by Title ascending</a></li>
+                            <li><a class="dropdown-item" href="/title_asc">Sort by Reference ascending</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="/title_desc">Sort by Title descending</a></li>
+                            <li><a class="dropdown-item" href="/title_desc">Sort by Reference descending</a></li>
                       </ul>
                     @endif
                 </li>
