@@ -63,7 +63,7 @@ class TestcaseController extends Controller
         $data = Testcase::where('id', $testid)->get();
         $files = File::where('testcase_id', $testid)->get();
         $pdf = PDF::loadView('invoice',compact('data', 'files'));
-        return $pdf->download('Testcase_'. $testid.'_A_'.$test->reference.'.pdf');
+        return $pdf->download('Testcase_A'.$test->reference.'_'.$testid.'.pdf');
     }
 
     public function destroy($testid){
