@@ -17,7 +17,6 @@
         <th><b>Test Data</b></th>
         <th><b>Expected result</b></th>
         <th><b>Actual result</b></th>
-        <th><b>comments</b></th>
         <th><b>Status (Passed/Failed)</b></th>
         <th><b>User Acceptance Validation (Yes/No)</b></th>
     </tr>
@@ -32,7 +31,6 @@
             <td>{{ $testcase->test_data }}</td>
             <td>{{ $testcase->expected_result }}</td>
             <td>{{ $testcase->actual_result }}</td>
-            <td>{{ $testcase->comments }}</td>
             <th>@if($testcase->done==0)failed @else passed @endif</th>
             <th></th>
         </tr>
