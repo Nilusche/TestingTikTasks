@@ -2,6 +2,8 @@
 
 <a href="http://phplaravel-702697-2325062.cloudwaysapps.com/" target="_blank">Go to Website</a>
 
+Dummy User Login: admin@gmail.com, password
+
 ## Disclaimer
 This website has been created to manage testcases on the project <a href="http://phplaravel-702697-2360337.cloudwaysapps.com/" target="_blank">Tik Tasks</a>.
 
